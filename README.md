@@ -245,10 +245,10 @@ The system tracks and displays:
 ## 👥 Group Members
 
 **[Add our group members' names here]**
-- Member 1: [Name] - [Role/Contribution]
-- Member 2: [Name] - [Role/Contribution]
-- Member 3: [Name] - [Role/Contribution]
-- Member 4: [Name] - [Role/Contribution]
+- Member 1: Muhammad Fahmi Azhar - [Coder]
+- Member 2: [Name] - [Coder]
+- Member 3: [Name] - [Report]
+- Member 4: [Name] - [Tester]
 
 ---
 
