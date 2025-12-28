@@ -109,13 +109,13 @@ clinicQueue.updatePatient("P001", "John Doe", 45, "Stable Chest Pain", 2);
 ```
 
 ### 4️⃣ SEARCH Operation - Find Patients
-- **By ID:** `searchByID(patientId)` - O(1) using HashMap
-- **By Name:** `searchByName(name)` - O(n) with partial matching
-- **By Priority:** `searchByPriority(priority)` - O(n) with priority filtering
+- **By ID:** `searchByID(patientId)` - O(1) using HashMap ✅
+- **By Name:** `searchByName(name)` - O(n) with partial matching ⏳ TODO
+- **By Priority:** `searchByPriority(priority)` - O(n) with priority filtering ⏳ TODO
 
 ```java
-Patient patient = clinicQueue.searchByID("P001");
-List<Patient> criticalPatients = clinicQueue.searchByPriority(1);
+Patient patient = clinicQueue.searchByID("P001");  // ✅ Works
+// List<Patient> criticalPatients = clinicQueue.searchByPriority(1);  // ⏳ TODO
 ```
 
 ---

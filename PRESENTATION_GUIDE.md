@@ -27,18 +27,18 @@
 - Demonstrate adding a new patient
 - Show automatic priority ordering
 
-✅ **DELETE** - `callNextPatient()` / `removePatient()` - O(log n)
-- Call next patient (highest priority)
-- Remove specific patient by ID
+✅ **DELETE** - `callNextPatient()` ✅ / `removePatient()` ⏳ TODO - O(log n)
+- Call next patient (highest priority) ✅
+- Remove specific patient by ID ⏳ TODO
 
 ✅ **UPDATE** - `updatePatient()` - O(n)
 - Modify patient information
 - Show re-ordering when priority changes
 
-✅ **SEARCH** - `searchByID()` / `searchByName()` / `searchByPriority()`
-- Search by ID (O(1) with HashMap)
-- Search by Name (O(n))
-- Search by Priority (O(n))
+**SEARCH** - `searchByID()` ✅ / `searchByName()` ⏳ / `searchByPriority()` ⏳
+- Search by ID (O(1) with HashMap) ✅
+- Search by Name (O(n)) ⏳ TODO
+- Search by Priority (O(n)) ⏳ TODO
 
 ### 3. Real-World Simulation
 - **Priority Levels:** Critical → Urgent → Regular

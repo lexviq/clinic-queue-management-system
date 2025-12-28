@@ -42,9 +42,9 @@
 | Focus on ONE data structure | ✅ Complete | Priority Queue is the core |
 | Simulate project behavior | ✅ Complete | Real clinic queue simulation |
 | Include INSERT operation | ✅ Complete | addPatient() method |
-| Include DELETE operation | ✅ Complete | callNextPatient(), removePatient() |
+| Include DELETE operation | ⏳ Partial | callNextPatient() ✅, removePatient() ⏳ TODO |
 | Include UPDATE operation | ✅ Complete | updatePatient() method |
-| Include SEARCH operation | ✅ Complete | 3 search methods |
+| Include SEARCH operation | ⏳ Partial | searchByID() ✅, searchByName() ⏳, searchByPriority() ⏳ TODO |
 | Simple input/output | ✅ Complete | Console-based interactive menu |
 | Must compile and run | ✅ Complete | Tested and verified |
 | User interaction | ✅ Complete | Full menu system |
