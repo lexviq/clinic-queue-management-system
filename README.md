@@ -307,10 +307,6 @@ This project is created for educational purposes as part of a DSA course assignm
 
 ---
 
-**⭐ Good luck with our presentation! Remember to demonstrate confidence and explain our implementation clearly to achieve that "Excellent" grade!**
-
----
-
 ## 📸 Screenshots
 
 ### Main Menu
