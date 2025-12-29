@@ -301,7 +301,7 @@ This project is created for educational purposes as part of a DSA course assignm
 ## 🎓 Acknowledgments
 
 - **Course:** Data Structures and Algorithms
-- **Institution:** [Our Institution Name]
+- **Institution:** International Islamic University Malaysia (IIUM)
 - **Date:** December 28, 2025
 - **Purpose:** Educational Mini Project
 
