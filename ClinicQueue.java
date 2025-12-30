@@ -87,9 +87,24 @@ public class ClinicQueue {
      * Time Complexity: O(n) for searching in queue, O(log n) for removal
      */
     public boolean removePatient(String patientId) {
-        // TODO: Remove patient feature needs to be implemented here
-        System.out.println("⚠️ Feature not yet implemented!");
-        return false;
+        Patient patient = patientMap.get(patientId);
+
+        if (patient == null) {
+            System.out.println("❌ Patient ID not found!");
+            return false;
+        }
+
+        // Remove from both data structures
+        boolean removedFromQueue = patientQueue.remove(patient); // O(n)
+        patientMap.remove(patientId); // O(1)
+
+        if (removedFromQueue) {
+            System.out.println("✅ Patient " + patientId + " removed from queue.");
+            return true;
+        } else {
+            System.out.println("⚠️ Patient was in map but not in queue (inconsistent state).");
+            return false;
+        }
     }
     
     // ========== UPDATE OPERATION ==========
@@ -148,9 +163,25 @@ public class ClinicQueue {
      * Time Complexity: O(n)
      */
     public List<Patient> searchByName(String name) {
-        // TODO: Search by name feature needs to be implemented here
-        System.out.println("⚠️ Feature not yet implemented!");
-        return new ArrayList<>();
+     if (name == null || name.trim().isEmpty()) {
+            System.out.println("❌ Search name cannot be empty.");
+            return new ArrayList<>();
+        }
+        String lowerName = name.toLowerCase().trim();
+        List<Patient> results = new ArrayList<>();
+
+        for (Patient patient : patientMap.values()) {
+            if (patient.getName().toLowerCase().contains(lowerName)) {
+                results.add(patient);
+            }
+        }
+
+        if (results.isEmpty()) {
+            System.out.println("🔍 No patients found with name containing: " + name);
+        } else {
+            System.out.println("🔍 Found " + results.size() + " patient(s) matching: " + name);
+        }
+        return results;
     }
     
     /**
@@ -158,9 +189,19 @@ public class ClinicQueue {
      * Time Complexity: O(n)
      */
     public List<Patient> searchByPriority(int priority) {
-        // TODO: Search by priority feature needs to be implemented here
-        System.out.println("⚠️ Feature not yet implemented!");
-        return new ArrayList<>();
+        List<Patient> results = new ArrayList<>();
+        for (Patient patient : patientMap.values()) {
+            if (patient.getPriority() == priority) {
+                results.add(patient);
+            }
+        }
+
+        if (results.isEmpty()) {
+            System.out.println("🔍 No patients found with priority: " + getPriorityLabel(priority));
+        } else {
+            System.out.println("🔍 Found " + results.size() + " patient(s) with priority: " + getPriorityLabel(priority));
+        }
+        return results;
     }
     
     // ========== DISPLAY OPERATIONS ==========
@@ -202,7 +243,19 @@ public class ClinicQueue {
         System.out.println("Current Patients in Queue         : " + patientQueue.size());
         System.out.println("────────────────────────────────────────────────────────────────");
         
-        // TODO: Priority breakdown needs to be implemented here
+        // Priority breakdown
+        int critical = 0, urgent = 0, regular = 0;
+        for (Patient p : patientMap.values()) {
+            switch (p.getPriority()) {
+                case 1: critical++; break;
+                case 2: urgent++; break;
+                case 3: regular++; break;
+            }
+        }
+        System.out.println("Priority Breakdown:");
+        System.out.println("  • CRITICAL/EMERGENCY (1): " + critical);
+        System.out.println("  • URGENT (2):             " + urgent);
+        System.out.println("  • REGULAR (3):            " + regular);
         
         System.out.println("════════════════════════════════════════════════════════════════");
     }
@@ -211,9 +264,14 @@ public class ClinicQueue {
      * Peek at the next patient without removing
      */
     public Patient peekNextPatient() {
-        // TODO: Peek next patient feature needs to be implemented here
-        System.out.println("⚠️ Feature not yet implemented!");
-        return null;
+        if (patientQueue.isEmpty()) {
+            System.out.println("❌ No patient in queue to peek.");
+            return null;
+        }
+        Patient next = patientQueue.peek();
+        System.out.println("🩺 NEXT PATIENT (peek):");
+        System.out.println(next);
+        return next;
     }
     
     /**
