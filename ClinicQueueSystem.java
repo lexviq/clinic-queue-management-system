@@ -152,6 +152,7 @@ public class ClinicQueueSystem {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════╗");
         System.out.println("║  ➖ REMOVE PATIENT FROM QUEUE                                      ║");
         System.out.println("╚════════════════════════════════════════════════════════════════════╝");
+        clinicQueue.displayQueue();
         
         String patientId = getStringInput("\nEnter Patient ID to remove: ");
         clinicQueue.removePatient(patientId);
