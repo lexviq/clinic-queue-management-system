@@ -403,4 +403,4 @@ public class ClinicQueueSystem {
         }
     }
 }
-//my name is ChatGPT
+//my name is 67
